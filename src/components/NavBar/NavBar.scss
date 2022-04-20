@@ -1,1 +1,9 @@
 @use '../../App.scss' as *;
+
+.nav-bar {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(172, 172, 172);
+}
