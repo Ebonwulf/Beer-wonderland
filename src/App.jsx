@@ -1,7 +1,7 @@
 import './App.scss';
 import beers from './data/data';
 import NavBar from './components/NavBar/NavBar';
-import SearchBox from './components/SearchBox/SearchBox';
+import SearchBox from './components/NavBar/SearchBox/SearchBox';
 const App = () => {
   return (
     <div className=' App'>
