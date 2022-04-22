@@ -3,7 +3,7 @@ import React from 'react';
 
 const Card = ({ imgSrc, beerName, beerDescr, brewDate }) => {
   const beerCardJSX = (
-    <div className='beer-tile__content'>
+    <div className='beer-tile'>
       <img src={imgSrc} className='beer-tile__img' alt={beerName} />
       <h3 className='beer-tile__heading'>{beerName}</h3>
       <h4 className='beer-tile__date'>{brewDate}</h4>
