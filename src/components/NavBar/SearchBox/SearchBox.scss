@@ -1,9 +1,38 @@
 @use '../../../App.scss' as *;
 
-.search-box {
+.search-menu {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.644);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+}
 
+.back-button {
+  font-size: 2em;
+  margin: 2% 25%;
+  color: aliceblue;
+  background-color: rgba(0, 0, 0, 0.692);
+  border: 2px solid blueviolet;
+  border-radius: 6px;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+.search-box {
+  background-color: aliceblue;
+  height: 40%;
+  &__label {
+    font-size: 2em;
+  }
   &__input {
     padding: 5px;
     font-size: 18px;
@@ -15,11 +44,14 @@
 label {
   margin: 2%;
   color: rgb(0, 0, 0);
-  font-size: 1.5em;
 }
 
 .filters-checkboxes {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+}
+
+#filters-checkboxes {
+  height: 20%;
 }
