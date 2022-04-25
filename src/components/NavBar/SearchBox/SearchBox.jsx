@@ -12,6 +12,15 @@ const SearchBox = ({ searchTerm, handleInput }) => {
           value={searchTerm}
           onInput={handleInput}
         />
+        <div className='filters-checkboxes'>
+          <h3>Filters</h3>
+          <label htmlFor='filter-by-alcohol'>High Alcohol</label>
+          <input id='filter-by-alcohol' type='checkbox' />
+          <label htmlFor='filter-classic'>Classic Range</label>
+          <input id='filter-classic' type='checkbox' />
+          <label htmlFor='filter-acidity'>Acidity</label>
+          <input id='filter-acidity' type='checkbox' />
+        </div>
       </form>
     </>
   );
