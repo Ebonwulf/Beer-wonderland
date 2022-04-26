@@ -1,4 +1,4 @@
-@use '../../../App.scss' as *;
+@use '../../App.scss' as *;
 
 .search-menu {
   display: flex;
@@ -29,7 +29,9 @@ h3 {
 
 .search-box {
   background-color: aliceblue;
-  height: 40%;
+  border-radius: 5px;
+  height: 50%;
+
   &__label {
     font-size: 2em;
   }

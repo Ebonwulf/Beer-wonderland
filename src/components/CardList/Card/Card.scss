@@ -1,0 +1,17 @@
+@use '../../../App.scss' as *;
+
+.beer-tile {
+  height: 30%;
+  background-color: rgba(240, 248, 255, 0.89);
+  box-shadow: 5px 5px blueviolet;
+  border-radius: 10px;
+  &__img {
+    height: 50%;
+    object-fit: cover;
+  }
+  &:hover {
+    background-color: rgb(215, 236, 255);
+    opacity: 100%;
+    cursor: pointer;
+  }
+}
