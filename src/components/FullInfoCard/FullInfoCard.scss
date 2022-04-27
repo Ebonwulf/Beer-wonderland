@@ -1,0 +1,10 @@
+@use '../../App.scss' as *;
+
+.full-info-card {
+  height: 80vh;
+  &__img {
+    height: 30%;
+    width: 50%;
+    object-fit: fill;
+  }
+}

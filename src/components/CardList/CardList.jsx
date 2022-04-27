@@ -12,6 +12,7 @@ const CardList = ({ filteredBeer }) => {
       <>
         <Card
           key={'beer' + beer.id}
+          id={beer.id}
           imgSrc={beer.image_url}
           beerName={beer.name}
           beerDescr={shortDecsription}

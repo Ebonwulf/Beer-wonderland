@@ -4,6 +4,7 @@ import './App.scss';
 import beers from './data/data';
 import NavBar from './containers/NavBar/NavBar';
 import Main from './containers/Main/Main';
+import FullInfoCard from './components/FullInfoCard/FullInfoCard';
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -19,13 +20,12 @@ const App = () => {
 
   const filteredBeer = beers.filter((beer) => {
     if (abvSearch) {
-      return beer.name.toLowerCase().includes(searchTerm) + (beer.abv >= 6);
+      return beer.name.toLowerCase().includes(searchTerm) + beer.abv >= 6;
     } else if (phSearch) {
-      return beer.name.toLowerCase().includes(searchTerm) + (beer.ph < 4);
+      return beer.name.toLowerCase().includes(searchTerm) + beer.ph < 4;
     } else if (classicSearch) {
       return (
-        beer.name.toLowerCase().includes(searchTerm) +
-        (beer.first_brewed <= 2010)
+        beer.name.toLowerCase().includes(searchTerm) + beer.first_brewed <= 2010
       );
     } else {
       return beer.name.toLowerCase().includes(searchTerm);
@@ -49,24 +49,46 @@ const App = () => {
     setClassicSearch(checked);
   };
   return (
-    <div className=' App'>
-      <NavBar
-        showSearch={showSearch}
-        toggleSearch={toggleSearch}
-        searchTermHandler={searchTermHandler}
-        searchTerm={searchTerm}
-        abvSearch={abvSearch}
-        phSearch={phSearch}
-        classicSearch={classicSearch}
-        handleAbvSearch={handleAbvSearch}
-        handleClassicSearch={handleClassicSearch}
-        handlePhSearch={handlePhSearch}
-      />
-      <header className='site-header'>
-        <h1 className='site-header__text'>Beer Wonderland</h1>
-      </header>
-      <Main filteredBeer={filteredBeer} />
-    </div>
+    <Router>
+      <div className=' App'>
+        <NavBar
+          showSearch={showSearch}
+          toggleSearch={toggleSearch}
+          searchTermHandler={searchTermHandler}
+          searchTerm={searchTerm}
+          abvSearch={abvSearch}
+          phSearch={phSearch}
+          classicSearch={classicSearch}
+          handleAbvSearch={handleAbvSearch}
+          handleClassicSearch={handleClassicSearch}
+          handlePhSearch={handlePhSearch}
+        />
+        <header className='site-header'>
+          <h1 className='site-header__text'>Beer Wonderland</h1>
+        </header>
+        <Routes>
+          <Route
+            path='/'
+            element={<Main filteredBeer={filteredBeer} />}
+          ></Route>
+          <Route
+            path='/beer/:id'
+            element={
+              <FullInfoCard
+                filteredBeer={filteredBeer}
+                key={'beer' + filteredBeer.id}
+                id={filteredBeer.id}
+                imgSrc={beers.image_url}
+                beerName={filteredBeer.name}
+                beerDescr={filteredBeer.decsription}
+                brewDate={filteredBeer.first_brewed}
+                tagLine={filteredBeer.tagline}
+              />
+            }
+          ></Route>
+        </Routes>
+      </div>
+    </Router>
   );
 };
 
