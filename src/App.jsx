@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.scss';
 import beers from './data/data';
@@ -12,11 +12,22 @@ const App = () => {
   const [abvSearch, setAbvSearch] = useState(false);
   const [phSearch, setPhSearch] = useState(false);
   const [classicSearch, setClassicSearch] = useState(false);
+  // const [beerArr, setBeerArr] = useState([]);
+  // const [beerRange, setBeerRange] = useState(50);
   //toggling the search box using state
   const toggleSearch = () => {
     console.log(showSearch);
     setShowSearch(!showSearch);
   };
+
+  // useEffect(() => {
+  //   fetch('https://api.punkapi.com/v2/')
+  //     .then((response) => response.json())
+  //     .then((beerObjects) => {
+  //       console.log(beerObjects.results);
+  //       setBeerArr(beerObjects.results);
+  //     });
+  // }, []);
 
   const filteredBeer = beers.filter((beer) => {
     if (abvSearch) {
@@ -63,9 +74,6 @@ const App = () => {
           handleClassicSearch={handleClassicSearch}
           handlePhSearch={handlePhSearch}
         />
-        <header className='site-header'>
-          <h1 className='site-header__text'>Beer Wonderland</h1>
-        </header>
         <Routes>
           <Route
             path='/'
@@ -78,11 +86,6 @@ const App = () => {
                 filteredBeer={filteredBeer}
                 key={'beer' + filteredBeer.id}
                 id={filteredBeer.id}
-                imgSrc={beers.image_url}
-                beerName={filteredBeer.name}
-                beerDescr={filteredBeer.decsription}
-                brewDate={filteredBeer.first_brewed}
-                tagLine={filteredBeer.tagline}
               />
             }
           ></Route>

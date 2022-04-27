@@ -1,9 +1,27 @@
 @use '../../App.scss' as *;
 
 .nav-bar {
-  height: 10vh;
+  height: 15vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(172, 172, 172);
+  background-image: url(../../assets/beer.jpg);
+  background-size: contain;
+  &__header {
+    margin-left: 25%;
+    font-size: 3.5em;
+    color: white;
+  }
+  &__search-button {
+    padding: 0 1%;
+    margin-left: 20%;
+    font-size: 2em;
+    background-color: blueviolet;
+    color: aliceblue;
+    border-radius: 5px;
+    border: 2px solid black;
+  }
+  &__search-button:hover {
+    cursor: pointer;
+  }
 }

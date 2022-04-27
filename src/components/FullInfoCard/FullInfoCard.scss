@@ -1,10 +1,19 @@
 @use '../../App.scss' as *;
 
 .full-info-card {
-  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.884);
+  &__card {
+    background-color: whitesmoke;
+    margin: 2% 20%;
+  }
+
   &__img {
     height: 30%;
     width: 50%;
-    object-fit: fill;
+    object-fit: contain;
   }
 }

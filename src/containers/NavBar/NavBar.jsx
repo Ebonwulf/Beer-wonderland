@@ -29,8 +29,9 @@ const NavBar = ({
           handlePhSearch={handlePhSearch}
         />
       )}
-      <div className='search-button'>
-        <button onClick={toggleSearch}>Beer Finder</button>
+      <h1 className='nav-bar__header'>Beer Wonderland</h1>
+      <div className='nav-bar__search-button' onClick={toggleSearch}>
+        Beer Finder
       </div>
     </nav>
   );
