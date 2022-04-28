@@ -30,18 +30,32 @@ const App = () => {
   // }, []);
 
   const filteredBeer = beers.filter((beer) => {
-    if (abvSearch) {
-      return beer.name.toLowerCase().includes(searchTerm) + beer.abv >= 6;
-    } else if (phSearch) {
-      return beer.name.toLowerCase().includes(searchTerm) + beer.ph < 4;
-    } else if (classicSearch) {
-      return (
-        beer.name.toLowerCase().includes(searchTerm) + beer.first_brewed <= 2010
-      );
+    if (
+      abvSearch &&
+      beer.abv > 5.9 &&
+      beer.name.toLowerCase().includes(searchTerm)
+    ) {
+      return beer.name.toLowerCase();
+    } else if (
+      phSearch &&
+      beer.ph < 4 &&
+      beer.name.toLowerCase().includes(searchTerm)
+    ) {
+      return beer.name.toLowerCase();
+    } else if (
+      classicSearch &&
+      beer.first_brewed <= parseInt(2010) &&
+      beer.name.toLowerCase().includes(searchTerm)
+    ) {
+      return beer.name.toLowerCase();
     } else {
       return beer.name.toLowerCase().includes(searchTerm);
     }
   });
+
+  // const loadBeers = (searchName, phBeers) => {
+  //  let
+  // }
 
   const searchTermHandler = (event) => {
     const text = event.target.value.toLowerCase();

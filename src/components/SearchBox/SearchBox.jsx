@@ -20,7 +20,7 @@ const SearchBox = ({
         </div>
         <div className='serach-box__bar'>
           <label className='search-box__label' htmlFor=''>
-            Beer search
+            Find those tastey beers!
           </label>
           <input
             type='text'

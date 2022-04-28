@@ -20,17 +20,29 @@ const FullInfoCard = ({ filteredBeer }) => {
             alt={theBeer.name}
           />
           <h2 className='full-info-card__heading'>{theBeer.name}</h2>
-          <h3 className='full-info-card__date'>{theBeer.first_brewed}</h3>
+          <h3 className='full-info-card__date'>
+            First brewed in: {theBeer.first_brewed}
+          </h3>
+
           <h4 className='full-info-card__tagline'>{theBeer.tagline}</h4>
-          <p className='full-info-card__acidity'>Acidity: {theBeer.ph}</p>
-          <p className='full-info-card__alcohol'>Alcohol: {theBeer.abv}%</p>
+          <div className='full-info-card__div'>
+            <h4>Acidity:</h4>
+            <p className='full-info-card__acidity'> {theBeer.ph}</p>
+            <h4>Alcohol:</h4>
+            <p className='full-info-card__alcohol'> {theBeer.abv}%</p>
+          </div>
+          <h4>All about this amazing beer!</h4>
           <p className='full-info-card__descr'>{theBeer.description}</p>
-          <p className='full-info-card__food-pairing'>
-            Best Food Pairings: {theBeer.food_pairing}
-          </p>
-          <p className='full-info-card__brew-tips'>
-            Brewers tips: {theBeer.brewers_tips}
-          </p>
+          <div className='full-info-card__div'>
+            <h4>Best Food Pairings: </h4>
+            <p className='full-info-card__food-pairing'>
+              {theBeer.food_pairing}
+            </p>
+          </div>
+          <div className='full-info-card__div'>
+            <h4>Brewer's tips: </h4>
+            <p className='full-info-card__brew-tips'>{theBeer.brewers_tips}</p>
+          </div>
         </div>
       </section>
     </>

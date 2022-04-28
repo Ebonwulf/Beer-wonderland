@@ -15,7 +15,7 @@
 }
 
 .back-button {
-  font-size: 2em;
+  font-size: 1.6em;
   margin: 2% 25%;
   color: aliceblue;
   background-color: rgba(0, 0, 0, 0.692);
@@ -25,6 +25,7 @@
 
 h3 {
   font-size: 2em;
+  margin: 5px;
 }
 
 .search-box {
@@ -36,7 +37,8 @@ h3 {
     font-size: 2em;
   }
   &__input {
-    padding: 5px;
+    margin: 2%;
+    padding: 5px 15px;
     font-size: 18px;
     border: 5px rgb(2, 140, 253) solid;
     border-radius: 15px;

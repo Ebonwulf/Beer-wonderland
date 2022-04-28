@@ -1,19 +1,57 @@
 @use '../../App.scss' as *;
 
+a {
+  align-content: center;
+  text-decoration: none;
+  width: 100px;
+  height: 50px;
+}
+.full-card-info__toggle {
+  height: 100%;
+  padding-top: 20px;
+  font-size: 2em;
+}
+
 .full-info-card {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.884);
+
   &__card {
-    background-color: whitesmoke;
+    background-color: rgba(245, 245, 245, 0.842);
     margin: 2% 20%;
   }
 
   &__img {
-    height: 30%;
-    width: 50%;
+    margin-top: 3%;
+    height: 35%;
+
     object-fit: contain;
   }
+
+  &__heading {
+    font-size: 3em;
+  }
+
+  &__tagline {
+    font-size: 1.5em;
+  }
+
+  &__div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+p {
+  font-size: 1.2em;
+  margin: 0.5%;
+}
+
+h4 {
+  font-size: 1.4em;
+  margin: 0.5%;
 }
