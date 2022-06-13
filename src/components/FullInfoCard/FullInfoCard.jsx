@@ -5,7 +5,7 @@ import './FullInfoCard.scss';
 const FullInfoCard = ({ filteredBeer }) => {
   const { id } = useParams();
   const theBeer = filteredBeer.find((beerId) => {
-    return beerId.id == id;
+    return beerId.id === id;
   });
   return (
     <>
